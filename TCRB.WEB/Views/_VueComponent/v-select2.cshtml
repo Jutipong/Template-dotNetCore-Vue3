@@ -1,0 +1,39 @@
+﻿<template id="v-select2">
+    <select ref="root" style="width:100%"></select>
+</template>
+
+<!-- BOOTSTRAP-->
+<link href="~/lib/select2/css/select2.min.css" rel="stylesheet" />
+<!-- SCRIPT -->
+<script src="~/lib/select2/js/select2.min.js"></script>
+<script src="~/js/_VueComponents/v-select2.min.js" asp-append-version="true"></script>
+
+<script type="text/javascript">
+    app.component('v-select2', {
+        template: '#v-select2',
+        emits: ['update:value'],
+        props: {
+            value: {
+                type: String,
+                default: () => null
+            },
+            options: {
+                type: Array,
+                default: () => []
+            },
+            placeholder: {
+                type: String,
+            },
+            allowclear: {
+                type: Boolean,
+                default: () => true
+            }
+        },
+        setup(props, { emit }) {
+            const { ref } = Vue;
+            const root = ref(null);
+
+            return { root, ..._vselect2(root, props, emit) };
+        }
+    });
+</script>

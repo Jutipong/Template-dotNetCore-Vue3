@@ -1,0 +1,156 @@
+﻿@using System.Text.Json;
+@model TCRB.WEB.Models.UserTest.UserTestViewModel
+
+<template id="app-component">
+    <div class="ibox ">
+        <div class="ibox-title">
+            <h5 class="text-primary"><i class="fa fa-search"></i> Search</h5>
+            <div class="ibox-tools">
+                <a class="collapse-link">
+                    <i class="fa fa-chevron-up"></i>
+                </a>
+            </div>
+        </div>
+        <div class="ibox-content">
+            <form id="formInquiry" class="form-horizontal" action="javascript:;" method="POST" v-on:submit.prevent="onInquiry()">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group row">
+                            <label class="col-md-3 col-form-label">Name</label>
+                            <div class="col-md-9">
+                                <input type="text" name="Name" class="form-control" v-model="Inquiry.Name" placeholder="" autocomplete="off">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group row">
+                            <label class="col-md-3 col-form-label">Last</label>
+                            <div class="col-md-9">
+                                <input type="text" name="Last" class="form-control" v-model="Inquiry.Last" placeholder="" autocomplete="off">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group row">
+                            <label class="col-md-3 col-form-label">Active</label>
+                            <div class="col-md-9">
+                                <v-select2 name="IsActive"
+                                           :placeholder="''"
+                                           :allowclear=true
+                                           :options="@JsonSerializer.Serialize(Model.IsActiveMaster)"
+                                           v-model:value="Inquiry.IsActive">
+                                </v-select2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group row pull-right">
+                            <div class="col-md-12">
+                                <button class="btn btn-w-m btn-danger btn-sm mr-2" type="button" @@click="InitialDatas()"><i class="fa fa-refresh"></i> ล้างค่า</button>
+                                <button class="btn btn-w-m btn-primary btn-sm" type="submit"><i class="fa fa-search"></i> ค้นหา</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    @*Datatable*@
+    @*<v-table :setup="tableSetup" @@action="tableAction" v-model:table="dataTable">
+        <button type="button" class="btn btn-w-m btn-success btn-sm" data-toggle="modal" @@click="showModal()"><i class="fa fa-plus"></i> สร้าง</button>
+    </v-table>*@
+
+    @*Modal Action*@
+    @await Html.PartialAsync("~/Views/UsertTest/Components/_Modal.cshtml")
+</template>
+
+<script type="text/javascript">
+    app.component('app-component', {
+        template: '#app-component',
+        setup() {
+            const { ref, reactive, onMounted, computed } = Vue;
+
+            const titleModal = computed(() => (UserTest.ID == _Enum.GuidEmpty) ? 'สร้าง' : 'แก้ไข');
+            const Inquiry = reactive({});
+            const UserTest = reactive({});
+            //dataTable
+            const dataTable = ref(null);
+
+            onMounted(() => {
+                $('#modalAction').on('hidden.bs.modal', () => _.assign(UserTest, _usertModel));
+                _.assign(UserTest, _usertModel);
+            });
+
+            function InitialDatas() {
+                _.assign(Inquiry, _inqueryModel);
+            };
+            function onInquiry() {
+                console.log('Inquiry');
+                //dataTable.value.fnDraw();
+            }
+            function tableAction({ action, data }) {
+                switch (action) {
+                    case _Enum.Action.VIEW.Text:
+                        _.assign(UserTest, data);
+                        $('#modalAction').modal('show');
+                        break;
+                    case _Enum.Action.Delete.Text:
+                        onDelete(data);
+                        break;
+                }
+            }
+            function onSave() {
+                @*_alertConfirm(_Config.Confirm.Blue, "fa fa-save", "บันทึกข้อมูล", `ยืนยันบันทึกข้อมูล ใช่หรือไม่?`, "ใช่", "ไม่", function (res) {
+                    if (res) {
+                        let url = UserTest.ID === _Enum.GuidEmpty ? '@Url.Action("Create")' : '@Url.Action("Update")';
+                        _ajax(url, UserTest, true, function (res) {
+                            if (res.Success) {
+                                _.assign(UserTest, _usertModel);
+                                _toastrSuccess(_Enum.Message.SaveSuccess);
+                                onInquiry();
+                                $('#modalAction').modal('hide');
+                            } else {
+                                _toastrError(res.Message);
+                            }
+                        });
+                    }
+                });*@
+            }
+            function onDelete(obj) {
+                _alertConfirm(_Config.Confirm.Red, "fa fa-trash", "ลบข้อมูล", `คุณต้องการลบ ใช่หรือไม่?`, "ใช่", "ไม่", function (res) {
+                    if (res) {
+                        _ajax('@Url.Action("Delete")', obj, true, function (res) {
+                            if (res.Success) {
+                                onInquiry();
+                                _toastrSuccess(_Enum.Message.DeleteSuccess);
+                            } else {
+                                _toastrError(_Enum.Message.DeleteFail);
+                            }
+                        });
+                    }
+                });
+            }
+            function showModal() {
+                $('#modalAction').modal('show');
+            }
+
+            InitialDatas();
+
+            return {
+                Inquiry,
+                UserTest,
+                InitialDatas,
+                dataTable,
+                tableAction,
+                showModal,
+                titleModal,
+                onInquiry,
+                onSave,
+                ..._datatableSetup('@Url.Action("InquiryMasterDatatable")')
+            };
+        }
+    });
+</script>

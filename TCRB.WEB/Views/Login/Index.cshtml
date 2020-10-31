@@ -1,0 +1,162 @@
+﻿@using System.Text.Json
+@model TCRB.WEB.Models.LoginViewModel
+@{ Layout = null; }
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TCRB | เข้าสู่ระบบ</title>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/css/animate.min.css" rel="stylesheet" />
+    <link href="~/lib/ladda/ladda-themeless.min.css" rel="stylesheet" />
+    <link href="~/lib/jquery-confirm/jquery-confirm.min.css" rel="stylesheet" />
+    <link href="~/css/style.css" rel="stylesheet" />
+    <link href="~/css/site.css" rel="stylesheet" />
+    <link href="~/images/favicon.ico" rel="icon" />
+</head>
+
+
+<body loading=lazy>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url( @Url.Content("~/images/tcrb-bg.jpg") );
+            background-size: cover;
+            background-position: center;
+            font-family: 'Roboto', sans-serif;
+        }
+        .ibox-content {
+            margin: 0 auto;
+            background-color: #ffffff;
+            background: rgba(0,0,0,0.0);
+            border-style: solid solid none;
+            border-width: 0px 0;
+        }
+        .title {
+            color: white;
+        }
+        .loginColumns {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 150px 20px 20px 20px;
+        }
+        .TCRBank_Logo{
+            width:95%
+        }
+    </style>
+    <div class="loginColumns animated fadeInDown">
+        <div class="row">
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-6">
+                <div class="ibox-content">
+                    <div class="text-center pb-2">
+                        <img alt="image" class="TCRBank_Logo rounded mt-4" src="~/images/tcrb-logo.png">
+                        <h2 class="title font-bold text-center mt-5"> <span> Call Verification System </span></h2>
+                    </div>
+                    <form class="mt-4" role="form" action="javascript:;" id="form-login" method="post">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <input type="text" tabindex="1" name="UserName" class="form-control username" placeholder="Username" autocomplete="off" value="@Model.UserName">
+                                <span class="input-group-addon">
+                                    <i class="fa fa-user"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <input type="password" tabindex="2" name="Password" class="form-control password" placeholder="Password" autocomplete="off" value="@Model.Password">
+                                <span class="input-group-addon">
+                                    <i class="fa fa-lock"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <button type="submit" id="btnLogin" class="btn ladda-button ladda-button-demo btn-primary block full-width m-b mt-4" data-style="zoom-out">
+                            LOGIN
+                            <i class="fa fa-sign-in"></i>
+                        </button>
+                        <div class=" text-center mt-5 mb-2">
+                            <span style="color:red; font-size:16px;" id="msg"></span>
+                        </div>
+                        <br />
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-3">
+            </div>
+        </div>
+    </div>
+
+
+    @*Modal Login AS400*@
+    <div class="modal inmodal fade animated fadeInDown" id="modalAction" role="dialog" aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog modal-60">
+            <div class="modal-content">
+                <form class="form-horizontal" action="javascript:;" id="form-login-as400" method="post">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Authentication: AS400</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <input type="text" tabindex="3" name="UserName" class="form-control username" placeholder="Username" autocomplete="off" value="@Model.UserNameAs400">
+                                        <span class="input-group-addon">
+                                            <i class="fa fa-user"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <input type="password" tabindex="4" name="Password" class="form-control password" placeholder="Password" autocomplete="off" value="@Model.PasswordAs400">
+                                        <span class="input-group-addon">
+                                            <i class="fa fa-lock"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12 text-center">
+                                <span style="color:red; font-size:16px;" id="msg"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" id="btnLogin-as400" class="btn btn-w-m btn-primary">LOGIN <i class="fa fa-sign-in"></i></button>
+                        @if (!Model.IsAuthenWin)
+                        {
+                            <button type="button" class="btn btn-w-m btn-white" data-dismiss="modal"> <i class="fa fa-times"></i> CANCEL</button>
+                        }
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+<script src="~/lib/jquery/dist/jquery-3.5.1.min.js"></script>
+<script src="~/lib/ladda/spin.min.js"></script>
+<script src="~/lib/ladda/ladda.min.js"></script>
+<script src="~/lib/lodash/lodash.min.js"></script>
+<script src="~/lib/jquery-confirm/jquery-confirm.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="~/lib/custom/custome.min.js" asp-append-version="true"></script>
+<script src="~/lib/custom/ajax.js"></script>
+<script src="~/js/Login/login.min.js" asp-append-version="true"></script>
+<script>
+    $(function () {
+        let isLoginA400 = @Html.Raw(JsonSerializer.Serialize(Model.IsAuthAs400));
+        let IsAuthenWin = @Html.Raw(JsonSerializer.Serialize(Model.IsAuthenWin));
+        let authUrlUrl = '@Url.Action("Index")';
+        let authAs400Url = '@Url.Action("AuthAs400")';
+        _login(isLoginA400, IsAuthenWin, authUrlUrl, authAs400Url);
+    });
+</script>

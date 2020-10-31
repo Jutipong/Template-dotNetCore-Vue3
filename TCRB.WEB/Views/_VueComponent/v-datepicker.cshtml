@@ -1,0 +1,45 @@
+﻿<template id="v-datepicker">
+    <div class="input-group date">
+        <input ref="root" type="text" class="form-control datepicker" autocomplete="off" />
+        <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+        <input type="hidden" :name="name" :value="valueDate" />
+    </div>
+</template>
+
+<!-- BOOTSTRAP-->
+<link href="~/lib/bootstrap-datepicker/css/bootstrap-datepicker3.min.css" rel="stylesheet" />
+<!-- SCRIPT -->
+<script src="~/lib/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+<script src="~/lib/bootstrap-datepicker/js-thai/bootstrap-datepicker-thai.min.js"></script>
+<script src="~/lib/bootstrap-datepicker/js-thai/locales/bootstrap-datepicker.th.min.js"></script>
+<script src="~/js/_VueComponents/v-datepicker.min.js" asp-append-version="true"></script>
+<script type="text/javascript">
+
+    app.component('v-datepicker', {
+        template: '#v-datepicker',
+        emits: ['update:date'],
+        props: {
+            name: {
+                type: String,
+                default: () => null
+            },
+            date: {
+                type: String,
+                default: () => null
+            },
+            startdate: {
+                type: String,
+                default: () => null
+            },
+            enddate: {
+                type: String,
+                default: () => null
+            }
+        },
+        setup(props, { emit }) {
+            const { ref } = Vue;
+            const root = ref(null);
+            return { root, ...vdatepicker(root, props, emit) };
+        }
+    });
+</script>

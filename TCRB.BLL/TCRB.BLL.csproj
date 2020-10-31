@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="ConfigOTPDataService .cs" />
+    <Compile Remove="ConfigurationDataService.cs" />
+    <Compile Remove="ConfigWrongAnswerDataService.cs" />
+    <Compile Remove="InquiryCustomerDataService.cs" />
+    <Compile Remove="MsCustomerTypeDataService.cs" />
+    <Compile Remove="MsEndCallReasonDataService.cs" />
+    <Compile Remove="MsLevelDataService.cs" />
+    <Compile Remove="MsMessageDataService.cs" />
+    <Compile Remove="MsProductTypeDataService.cs" />
+    <Compile Remove="MsQuestionDataService.cs" />
+    <Compile Remove="MsServiceTypeDataService.cs" />
+    <Compile Remove="MsTopicTypeDataService.cs" />
+    <Compile Remove="MsVerificationReasonDataService.cs" />
+    <Compile Remove="MsVerifyTypeDataService.cs" />
+    <Compile Remove="ReportDataService.cs" />
+    <Compile Remove="VerifyCustomerDataService.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+    <PackageReference Include="EPPlus" Version="4.5.3.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TCRB.DAL\TCRB.DAL.csproj" />
+  </ItemGroup>
+
+</Project>

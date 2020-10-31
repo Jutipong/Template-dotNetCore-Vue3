@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TCRB - @ViewData["Title"] </title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    @if (IsSectionDefined("Styles"))
+    {@RenderSection("Styles", required: true)}
+    <style>
+        .BlockUI {
+            position: fixed;
+            opacity: 0.60;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            background: url(@Url.Content("~/images/g-dots.gif")) center no-repeat #fff;
+        }
+    </style>
+    <environment names="Development">
+        <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="~/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+        <link href="~/css/animate.min.css" rel="stylesheet" />
+        <link href="~/lib/toastr/toastr.min.css" rel="stylesheet" />
+        <link href="~/lib/jquery-confirm/jquery-confirm.min.css" rel="stylesheet" />
+        <link href="~/css/site.css" rel="stylesheet" />
+        <link href="~/css/style.css" rel="stylesheet" />
+    </environment>
+
+    <environment names="Staging,Production">
+        <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="~/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+        <link href="~/css/animate.min.css" rel="stylesheet" />
+        <link href="~/lib/toastr/toastr.min.css" rel="stylesheet" />
+        <link href="~/lib/jquery-confirm/jquery-confirm.min.css" rel="stylesheet" />
+        <link href="~/css/site.css" rel="stylesheet" />
+        <link href="~/css/style.css" rel="stylesheet" />
+    </environment>
+
+    <link rel="shortcut icon" href="~/images/favicon.ico" />
+
+</head>
+<body class="skin-1 fixed-sidebar fixed-nav fixed-nav-basic">
+    <div class="BlockUI" style="display:none;"></div>
+    <!-- Wrapper-->
+    <div id="wrapper" class="@Html.PageClass()">
+        <!-- Navigation -->
+        <partial name="_Navigation" />
+        <!-- Page wraper -->
+        <div id="page-wrapper" class="gray-bg @ViewBag.SpecialClass">
+            <!-- Top Navbar -->
+            <partial name="_TopNavbar" />
+            <!-- Main view  -->
+            <div class="wrapper wrapper-content animated fadeInDown">
+                <div id="app">
+                    @RenderBody()
+                </div>
+            </div>
+            <partial name="_Footer" />
+        </div>
+    </div>
+
+    <environment names="Development">
+        <!-- Base js -->
+        <script src="~/lib/vue/vue.global.js"></script>
+        <script src="~/lib/custom/custome.js" asp-append-version="true"></script>
+    </environment>
+    <environment names="Staging,Production">
+        <!-- Base js -->
+        <script src="~/lib/vue/vue.global.js"></script>
+        <script src="~/lib/custom/custome.min.js" asp-append-version="true"></script>
+    </environment>
+
+    <!-- Plugins -->
+    <script src="~/lib/jquery/dist/jquery-3.5.1.min.js"></script>
+    <script src="~/lib/lodash/lodash.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="~/lib/metisMenu/dist/jquery.metisMenu.js"></script>
+    <script src="~/lib/slimScroll/jquery.slimscroll.min.js"></script>
+    <script src="~/lib/pace/pace.min.js"></script>
+    <script src="~/lib/toastr/toastr.min.js"></script>
+    <script src="~/js/script.min.js"></script>
+    <script src="~/lib/jquery-confirm/jquery-confirm.min.js"></script>
+    <script src="~/lib/dayjs/dayjs.min.js"></script>
+    <script src="~/lib/dayjs/th.min.js"></script>
+    <script src="~/js/main.js" asp-append-version="true"></script>
+    <script src="~/lib/custom/ajax.js" asp-append-version="true"></script>
+
+    @RenderSection("scripts", required: false)
+
+    <script type="text/javascript">
+        $(function () {
+            dayjs.locale('th');
+            $("#_date").text(dayjs().format('วันdddd ที่DD MMMM YYYY'));
+            $("#logout").click(function () {
+                _alertConfirm(_Config.Confirm.Red, "fa fa-sign-out", "ออกจากระบบ", "คุณต้องการออกจากระบบ ใช่หรือไม่ ?", "ใช่", "ไม่",
+                    (res) => {
+                        if (res) {
+                            window.location = '@Url.Action("Logout", "Login")';
+                        }
+                    });
+            });
+        });
+        const _logout = () => { window.location = '@Url.Action("Logout", "Login")'; };
+        const vmApp = app.mount("#app");
+    </script>
+
+</body>
+</html>

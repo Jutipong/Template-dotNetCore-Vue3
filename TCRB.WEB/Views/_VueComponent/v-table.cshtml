@@ -1,0 +1,60 @@
+﻿<template id="v-table">
+    <div class="row">
+        <div class="col-12">
+            <div class="ibox ">
+                <div class="ibox-title">
+                    <h5 class="text-primary" v-html="titleMessage"></h5>
+                    <div class="ibox-tools">
+                        <slot></slot>
+                    </div>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="material-datatables table-responsive">
+                                <table class="table table-bordered table-hover" ref="root">
+                                    <thead class="bg-primary">
+                                        <tr>
+                                            <th class='text-center' style="font-weight: bold;" v-for="(item, index) in columns">{{item.title}}</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+<!-- BOOTSTRAP-->
+<link href="~/lib/dataTables/datatables.min.css" rel="stylesheet" />
+<!-- SCRIPT -->
+<script src="~/lib/dataTables/datatables.min.js"></script>
+<script src="~/lib/dataTables/dataTables.bootstrap4.min.js"></script>
+<script src="~/js/_VueComponents/v-teble.min.js" asp-append-version="true"></script>
+
+<script type="text/javascript">
+    app.component('v-table', {
+        template: '#v-table',
+        emits: ['action', 'update:table'],
+        props: {
+            setup: {
+                type: Object,
+                default: () => { }
+            }
+        },
+        setup({ setup }, { emit }) {
+            const { ref } = Vue;
+            const root = ref(null);
+            const { columns, options } = setup
+
+            return {
+                root, columns,
+                ..._vtable(root, options, columns, emit)
+            };
+        }
+    });
+</script>

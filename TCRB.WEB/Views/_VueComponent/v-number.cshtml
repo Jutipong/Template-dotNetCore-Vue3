@@ -1,0 +1,35 @@
+﻿<template id="v-number">
+    <input ref="root" class="form-control" type="text" v-model="amount" v-on:change="emitValue" v-on:blur="handleBlur" />
+</template>
+
+<!-- SCRIPT -->
+<script src="~/lib/number/jquery.number.js"></script>
+<script src="~/js/_VueComponents/v-number.min.js" asp-append-version="true"></script>
+
+<script type="text/javascript">
+    app.component('v-number', {
+        template: '#v-number',
+        emits: ['update:value'],
+        props: {
+            value: {
+                type: Number,
+                default: () => null
+            },
+            precision: {
+                type: Number,
+                default: () => 2
+            },
+            maxvalue: {
+                type: Number,
+                default: () => 9999999999
+            }
+        },
+        setup({ value, precision, maxvalue }, { emit }) {
+            const { ref } = Vue;
+            const root = ref(null);
+
+
+            return { root, ..._vnumber(root, value, precision, maxvalue, emit) };
+        }
+    });
+</script>
