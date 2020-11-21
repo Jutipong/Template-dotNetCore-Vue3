@@ -152,8 +152,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\TCRB.BLL\TCRB.BLL.csproj" />
-		<ProjectReference Include="..\TCRB.HELPER\TCRB.HELPER.csproj" />
+		<ProjectReference Include="..\TCRB.BLL\BLL.csproj" />
+		<ProjectReference Include="..\TCRB.HELPER\HELPER.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>
