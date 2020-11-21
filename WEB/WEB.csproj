@@ -5,6 +5,8 @@
 		<StartupObject></StartupObject>
 		<UserSecretsId>bb356502-2416-4cec-ad7a-014df7032508</UserSecretsId>
 		<ApplicationIcon>favicon.ico</ApplicationIcon>
+		<EnableNETAnalyzers>true</EnableNETAnalyzers>
+		<EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -152,8 +154,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\TCRB.BLL\BLL.csproj" />
-		<ProjectReference Include="..\TCRB.HELPER\HELPER.csproj" />
+		<ProjectReference Include="..\BLL\BLL.csproj" />
+		<ProjectReference Include="..\HELPER\HELPER.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>
