@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace TCRB.DAL.Model.Authentication
+namespace DAL.Model.Authentication
 {
     public class UserLoginModel
     {
@@ -47,11 +47,11 @@ namespace TCRB.DAL.Model.Authentication
 
     }
 
-    public class MenuModel
-    {
-        public string Controller { get; set; }
-        public MenuItem Item { get; set; }
-    }
+    //public class MenuModel
+    //{
+    //    public string Controller { get; set; }
+    //    public MenuItem Item { get; set; }
+    //}
 
     public class MenuAccess
     {

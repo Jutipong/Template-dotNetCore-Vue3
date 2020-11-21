@@ -2,9 +2,9 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
-using TCRB.DAL.Entity;
+using DAL.Entity;
 
-namespace TCRB.DAL.DBContext
+namespace DAL.DBContext
 {
     public partial class DBContext : DbContext
     {

@@ -1,9 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using DAL.Model.Appsetting;
+using DAL.Model.Authentication;
+using DAL.Model.Commons;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
-using TCRB.DAL.Model.Appsetting;
-using TCRB.DAL.Model.Authentication;
-using TCRB.DAL.Model.Commons;
-using TCRB.DAL.StoredProcedureModel.sp_InquiryCustomer;
 
 namespace TCRB.WEB.Controllers
 {
@@ -25,11 +24,6 @@ namespace TCRB.WEB.Controllers
         public IActionResult Index()
         {
             return View(null);
-        }
-
-        public JsonResult InquiryMasterDatatable(DatableOption option, sp_InquiryCustomerModel spInquiryCustomer)
-        {
-            return Json(null);
         }
     }
 }

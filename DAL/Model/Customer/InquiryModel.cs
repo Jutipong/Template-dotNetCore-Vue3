@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace TCRB.DAL.Model.Customer
+namespace DAL.Model.Customer
 {
     public class InquiryModel
     {

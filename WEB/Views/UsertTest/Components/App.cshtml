@@ -78,7 +78,7 @@
             const dataTable = ref(null);
 
             onMounted(() => {
-                $('#modalAction').on('hidden.bs.modal', () => _.assign(UserTest, usertModel));
+                $('#modalAction').on('hidden.bs.modal', () => Object.assign(UserTest, usertModel));
             });
 
             const showModal = () => $('#modalAction').modal('show');
@@ -87,7 +87,7 @@
             const tableAction = ({ action, data }) => {
                 switch (action) {
                     case _Enum.Action.VIEW.Text:
-                        _.assign(UserTest, data);
+                        Object.assign(UserTest, data);
                         $('#modalAction').modal('show');
                         break;
                     case _Enum.Action.Delete.Text:
@@ -137,7 +137,7 @@
                 onInquiry,
                 onSave,
                 ..._datatableSetup('@Url.Action("InquiryMasterDatatable")'),
-                ...getStore()
+                ..._getStore()
             };
         }
     });

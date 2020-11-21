@@ -8,11 +8,11 @@
 
     <environment names="Development">
         <script src="~/js/UserTest/datatable-setup.js" asp-append-version="true"></script>
-        <script src="~/js/UserTest/store.js"></script>
+        <script src="~/js/UserTest/store.js" asp-append-version="true"></script>
     </environment>
     <environment names="Staging,Production">
         <script src="~/js/UserTest/datatable-setup.min.js" asp-append-version="true"></script>
-        <script src="~/js/UserTest/store.min.js"></script>
+        <script src="~/js/UserTest/store.min.js" asp-append-version="true"></script>
     </environment>
 
     @*---------- optional component ----------*@
@@ -27,6 +27,6 @@
     //=====================================
     //====== STATE GLOBAL (◍•ᴗ•◍)❤ =======
     //=====================================
-        initialModel(@Html.Raw(JsonSerializer.Serialize(Model.UserTest)), @Html.Raw(JsonSerializer.Serialize(Model.UserTest)));
+        _initialModel(@Html.Raw(JsonSerializer.Serialize(Model.UserTest)), @Html.Raw(JsonSerializer.Serialize(Model.UserTest)));
     </script>
 }

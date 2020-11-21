@@ -1,8 +1,8 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using DAL.Model.Appsetting;
+using DAL.Model.Authentication;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
-using TCRB.DAL.Model.Appsetting;
-using TCRB.DAL.Model.Authentication;
 
 namespace TCRB.WEB.Controllers
 {

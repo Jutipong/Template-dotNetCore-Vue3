@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Globalization;
 using AutoMapper;
+using DAL.DataWrapper;
+using DAL.Model.Appsetting;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -14,8 +16,6 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using TCRB.BLL;
-using TCRB.DAL.DataWrapper;
-using TCRB.DAL.Model.Appsetting;
 using TCRB.WEB.Helpers;
 using TCRB.WEB.ModelBinder;
 

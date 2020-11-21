@@ -1,8 +1,8 @@
-﻿using System.Linq;
+﻿using DAL.Model.Authentication;
+using System.Linq;
 using System.Security.Claims;
 using System.Text.Json;
 using System.Web;
-using TCRB.DAL.Model.Authentication;
 
 namespace TCRB.WEB
 {

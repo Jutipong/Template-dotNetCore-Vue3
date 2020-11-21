@@ -1,8 +1,8 @@
 ﻿using System.Linq;
 using System.Threading.Tasks;
-using TCRB.DAL.DataAccess;
+using DAL.DataAccess;
 
-namespace TCRB.DAL.DataWrapper
+namespace DAL.DataWrapper
 {
     public interface IDataAccessWrapper
     {

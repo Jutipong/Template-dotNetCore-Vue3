@@ -1,6 +1,6 @@
-﻿using TCRB.DAL.Model.Commons;
+﻿using DAL.Model.Commons;
 
-namespace TCRB.DAL.DataAccess
+namespace DAL.DataAccess
 {
     public interface IUserTestDataAccess
     {

@@ -1,7 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using DAL.Model.Commons;
+using DAL.Model.UserLogin;
+using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
-using TCRB.DAL.Model.Commons;
-using TCRB.DAL.Model.UserLogin;
 using TCRB.WEB.Models;
 
 namespace TCRB.WEB.Controllers

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace TCRB.DAL.Model.UserLogin
+namespace DAL.Model.UserLogin
 {
     public class LoginModel
     {

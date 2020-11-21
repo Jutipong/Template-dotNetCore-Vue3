@@ -4,12 +4,12 @@ const inqueryModel = Vue.reactive({});
 const usertModel = Vue.reactive({});
 
 //================== Initial ==================
-const initialModel = (inquery, user) => {
+function _initialModel(inquery, user) {
     Object.assign(inqueryModel, inquery)
     Object.assign(usertModel, user)
     Object.assign(store, user)
 }
 
-const getStore = () => {
+function _getStore() {
     return { inqueryModel, usertModel, store };
 }

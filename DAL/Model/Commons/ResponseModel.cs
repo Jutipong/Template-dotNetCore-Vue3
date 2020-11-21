@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using System.Collections.Generic;
 
-namespace TCRB.DAL.Model.Commons
+namespace DAL.Model.Commons
 {
     public class _ResponseModel
     {

@@ -1,11 +1,11 @@
 ﻿using AutoMapper;
+using DAL.DataWrapper;
+using DAL.Entity;
+using DAL.Model.Commons;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Reflection;
 using System.Text.Json;
-using TCRB.DAL.DataWrapper;
-using TCRB.DAL.Entity;
-using TCRB.DAL.Model.Commons;
 
 namespace TCRB.BLL
 {

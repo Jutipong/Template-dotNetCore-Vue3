@@ -3,10 +3,10 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using System.Linq;
 using System.Threading.Tasks;
-using TCRB.DAL.DataAccess;
-using TCRB.DAL.Model.Appsetting;
+using DAL.DataAccess;
+using DAL.Model.Appsetting;
 
-namespace TCRB.DAL.DataWrapper
+namespace DAL.DataWrapper
 {
     public class DataAccessWrapper : IDataAccessWrapper
     {

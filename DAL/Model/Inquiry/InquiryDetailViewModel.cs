@@ -1,5 +1,5 @@
 ﻿
-namespace TCRB.DAL.Model.Inquiry
+namespace DAL.Model.Inquiry
 {
     public class InquiryDetailViewModel
     {

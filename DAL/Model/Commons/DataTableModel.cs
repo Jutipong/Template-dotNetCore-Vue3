@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace TCRB.DAL.Model.Commons
+namespace DAL.Model.Commons
 {
     public class DataTableResponseModel
     {

@@ -1,11 +1,9 @@
-﻿using HELPER;
+﻿using DAL.Model.Authentication;
+using DAL.Model.MenuPermission;
+using HELPER;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using TCRB.DAL.Model.Authentication;
-using TCRB.DAL.Model.MenuPermission;
-using MenuModel = TCRB.DAL.Model.MenuPermission.MenuModel;
-using PermissionModel = TCRB.DAL.Model.MenuPermission.PermissionModel;
 
 namespace TCRB.WEB.Helpers
 {
@@ -73,56 +71,56 @@ namespace TCRB.WEB.Helpers
 
         public List<string> MsPremission(List<string> permissions)
         {
-            var InboundAgent = new PermissionModel
+            var InboundAgent = new DAL.Model.MenuPermission.PermissionModel
             {
                 ID = EnumPermission.InboundAgent.AsDescription(),
                 Name = EnumPermission.InboundAgent.ToString(),
                 MenuIDs = new List<string> { "MS001", "MS002" }
             };
-            var InboundSupervisor = new PermissionModel
+            var InboundSupervisor = new DAL.Model.MenuPermission.PermissionModel
             {
                 ID = EnumPermission.InboundSupervisor.AsDescription(),
                 Name = EnumPermission.InboundSupervisor.ToString(),
                 MenuIDs = new List<string> { "MS001", "MS002", "MS003" }
             };
-            var ChatAgent = new PermissionModel
+            var ChatAgent = new DAL.Model.MenuPermission.PermissionModel
             {
                 ID = EnumPermission.ChatAgent.AsDescription(),
                 Name = EnumPermission.ChatAgent.ToString(),
                 MenuIDs = new List<string> { "MS001", "MS002" }
             };
-            var ChatSupervisor = new PermissionModel
+            var ChatSupervisor = new DAL.Model.MenuPermission.PermissionModel
             {
                 ID = EnumPermission.ChatSupervisor.AsDescription(),
                 Name = EnumPermission.ChatSupervisor.ToString(),
                 MenuIDs = new List<string> { "MS001", "MS002", "MS003" }
             };
-            var BackOffice = new PermissionModel
+            var BackOffice = new DAL.Model.MenuPermission.PermissionModel
             {
                 ID = EnumPermission.BackOffice.AsDescription(),
                 Name = EnumPermission.BackOffice.ToString(),
                 MenuIDs = new List<string> { "MS001", "MS002" }
             };
-            var BusinessAdmin = new PermissionModel
+            var BusinessAdmin = new DAL.Model.MenuPermission.PermissionModel
             {
                 ID = EnumPermission.BusinessAdmin.AsDescription(),
                 Name = EnumPermission.BusinessAdmin.ToString(),
                 MenuIDs = new List<string> { "MS003", "MS004", "MS005", "MS006", "MS007", "MS008", "MS009", "MS010", "MS011", "MS012", "MS013", "MS014", "MS015" }
             };
-            var QA = new PermissionModel
+            var QA = new DAL.Model.MenuPermission.PermissionModel
             {
                 ID = EnumPermission.QA.AsDescription(),
                 Name = EnumPermission.QA.ToString(),
                 MenuIDs = new List<string> { "MS002" }
             };
-            var Fraud = new PermissionModel
+            var Fraud = new DAL.Model.MenuPermission.PermissionModel
             {
                 ID = EnumPermission.Fraud.AsDescription(),
                 Name = EnumPermission.Fraud.ToString(),
                 MenuIDs = new List<string> { "MS003" }
             };
 
-            var result = new List<PermissionModel>
+            var result = new List<DAL.Model.MenuPermission.PermissionModel>
             {
                 InboundAgent,
                 InboundSupervisor,

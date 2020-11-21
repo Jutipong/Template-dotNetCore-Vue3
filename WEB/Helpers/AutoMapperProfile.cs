@@ -1,7 +1,4 @@
 ﻿using AutoMapper;
-using System.Collections.Generic;
-using TCRB.DAL.Model.Authentication;
-using TCRB.DAL.UserManagement.EntityModel;
 
 namespace TCRB.WEB.Helpers
 {
@@ -9,9 +6,6 @@ namespace TCRB.WEB.Helpers
     {
         public AutoMapperProfile()
         {
-            CreateMap<Employee, ADUserModel>();
-            CreateMap<Group, GroupADModel>();
-            CreateMap<Permission, PermissionADModel>();
         }
     }
 }

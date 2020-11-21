@@ -1,7 +1,5 @@
 ﻿function _datatableSetup(url) {
-
-    const { ref, reactive, toRef, readonly } = Vue;
-
+    const { reactive } = Vue;
     const tableSetup = reactive({
         columns: [
             { title: "ชื่อ", data: "Name", sClass: "text-center", bSortable: true },

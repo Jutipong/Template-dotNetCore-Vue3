@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace TCRB.DAL.Model.MenuPermission
+namespace DAL.Model.MenuPermission
 {
     public class MenuPermissionModel
     {

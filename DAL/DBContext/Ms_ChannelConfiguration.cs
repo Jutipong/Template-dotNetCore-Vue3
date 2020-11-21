@@ -3,9 +3,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore;
 using System;
-using TCRB.DAL.Entity;
+using DAL.Entity;
 
-namespace TCRB.DAL.DBContext
+namespace DAL.DBContext
 {
     public class Ms_ChannelConfiguration : IEntityTypeConfiguration<Ms_Channel>
     {

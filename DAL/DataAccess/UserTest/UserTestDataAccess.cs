@@ -3,9 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using TCRB.DAL.Model.Commons;
+using DAL.Model.Commons;
 
-namespace TCRB.DAL.DataAccess
+namespace DAL.DataAccess
 {
     public class UserTestDataAccess : IUserTestDataAccess
     {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace TCRB.DAL.Model.Commons
+namespace DAL.Model.Commons
 {
     public class DownloadModel
     {

@@ -1,4 +1,4 @@
-﻿namespace TCRB.DAL.Model.Appsetting
+﻿namespace DAL.Model.Appsetting
 {
     public class AppsittingModel
     {
