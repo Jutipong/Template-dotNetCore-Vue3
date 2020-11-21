@@ -52,5 +52,11 @@
     "inputFiles": [
       "wwwroot/js/UserTest/datatable-setup.js"
     ]
+  },
+  {
+    "outputFileName": "wwwroot/js/UserTest/store.min.js",
+    "inputFiles": [
+      "wwwroot/js/UserTest/store.js"
+    ]
   }
 ]
