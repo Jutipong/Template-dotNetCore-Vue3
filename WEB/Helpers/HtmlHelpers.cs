@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
-namespace TCRB.WEB
+namespace WEB
 {
     public static class HtmlHelpers
     {

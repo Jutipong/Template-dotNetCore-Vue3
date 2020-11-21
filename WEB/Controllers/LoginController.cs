@@ -2,9 +2,9 @@
 using DAL.Model.UserLogin;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
-using TCRB.WEB.Models;
+using WEB.Models;
 
-namespace TCRB.WEB.Controllers
+namespace WEB.Controllers
 {
     public class LoginController : Controller
     {

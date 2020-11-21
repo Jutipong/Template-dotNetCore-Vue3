@@ -2,7 +2,7 @@
 using Newtonsoft.Json;
 using System;
 
-namespace TCRB.WEB.Helpers
+namespace WEB.Helpers
 {
     public class LoggerHelper<T> : ILoggerHelper<T>
     {

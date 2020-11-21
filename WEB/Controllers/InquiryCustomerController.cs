@@ -1,10 +1,9 @@
 ﻿using DAL.Model.Appsetting;
 using DAL.Model.Authentication;
-using DAL.Model.Commons;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 
-namespace TCRB.WEB.Controllers
+namespace WEB.Controllers
 {
     //[Authorize]
     public class InquiryCustomerController : Controller

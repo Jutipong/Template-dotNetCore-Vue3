@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 
-namespace TCRB.WEB.Helpers
+namespace WEB.Helpers
 {
     public class AutoMapperProfile : Profile
     {

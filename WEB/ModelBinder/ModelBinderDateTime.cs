@@ -1,14 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc.ModelBinding;
 using System;
-using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
-using System.Text.Encodings.Web;
 using System.Threading;
 using System.Threading.Tasks;
 
 
-namespace TCRB.WEB.ModelBinder
+namespace WEB.ModelBinder
 {
     public class ModelBinderDateTime : IModelBinder
     {

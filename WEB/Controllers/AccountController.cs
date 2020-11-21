@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace TCRB.WEB.Controllers
+namespace WEB.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public class AccountController : Controller
     {
         public IActionResult Index()

@@ -2,11 +2,8 @@
 using Microsoft.AspNetCore.Mvc.ModelBinding.Binders;
 using Microsoft.Extensions.Logging;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace TCRB.WEB.ModelBinder
+namespace WEB.ModelBinder
 {
     public class ModelBinderProvider : IModelBinderProvider
     {

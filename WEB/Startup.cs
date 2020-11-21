@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Globalization;
 using AutoMapper;
+using BLL;
 using DAL.DataWrapper;
 using DAL.Model.Appsetting;
 using Microsoft.AspNetCore.Authentication.Cookies;
@@ -15,11 +16,10 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using TCRB.BLL;
-using TCRB.WEB.Helpers;
-using TCRB.WEB.ModelBinder;
+using WEB.Helpers;
+using WEB.ModelBinder;
 
-namespace TCRB.WEB
+namespace WEB
 {
     public class Startup
     {

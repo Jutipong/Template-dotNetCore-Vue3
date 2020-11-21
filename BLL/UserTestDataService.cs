@@ -1,5 +1,4 @@
-﻿using AutoMapper;
-using DAL.DataWrapper;
+﻿using DAL.DataWrapper;
 using DAL.Entity;
 using DAL.Model.Commons;
 using Microsoft.Extensions.Logging;
@@ -7,7 +6,7 @@ using System;
 using System.Reflection;
 using System.Text.Json;
 
-namespace TCRB.BLL
+namespace BLL
 {
     public class UserTestDataService
     {

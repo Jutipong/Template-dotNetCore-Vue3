@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace TCRB.WEB.Helpers
+namespace WEB.Helpers
 {
     public class AccessPermissionFilter : ActionFilterAttribute
     {

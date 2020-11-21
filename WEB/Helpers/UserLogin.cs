@@ -4,7 +4,7 @@ using System.Security.Claims;
 using System.Text.Json;
 using System.Web;
 
-namespace TCRB.WEB
+namespace WEB
 {
     public class UserLogin
     {

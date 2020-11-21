@@ -1,12 +1,11 @@
 ﻿using DAL.Model.Appsetting;
 using DAL.Model.Authentication;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 
-namespace TCRB.WEB.Controllers
+namespace WEB.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public class DashboardController : Controller
     {
         private readonly AppsittingModel _appsitting;

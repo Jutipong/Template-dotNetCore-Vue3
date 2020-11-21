@@ -3,7 +3,7 @@ using System.Globalization;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace TCRB.WEB.ModelBinder
+namespace WEB.ModelBinder
 {
     public class CustomJsonConverterDateTime : JsonConverter<DateTime>
     {

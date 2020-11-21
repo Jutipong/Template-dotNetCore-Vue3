@@ -1,10 +1,7 @@
 ﻿using DAL.Model.Commons;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace TCRB.WEB.Models
+namespace WEB.Models
 {
     public class Demo01ViewModel
     {

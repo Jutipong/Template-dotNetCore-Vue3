@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace TCRB.WEB.Helpers
+namespace WEB.Helpers
 {
     public interface ILoggerHelper<T>
     {

@@ -5,8 +5,8 @@
 		<StartupObject></StartupObject>
 		<UserSecretsId>bb356502-2416-4cec-ad7a-014df7032508</UserSecretsId>
 		<ApplicationIcon>favicon.ico</ApplicationIcon>
-		<EnableNETAnalyzers>true</EnableNETAnalyzers>
-		<EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+		<EnableNETAnalyzers>false</EnableNETAnalyzers>
+		<EnforceCodeStyleInBuild>false</EnforceCodeStyleInBuild>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -160,12 +160,6 @@
 
 	<ItemGroup>
 		<WCFMetadata Include="Connected Services" />
-	</ItemGroup>
-
-	<ItemGroup>
-		<None Update="TemplateReport\VerifyCustomer.xlsx">
-			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
-		</None>
 	</ItemGroup>
 
 	<ItemGroup>

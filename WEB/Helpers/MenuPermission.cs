@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace TCRB.WEB.Helpers
+namespace WEB.Helpers
 {
     //รอย้ายไปลง DB
     public class MenuPermission

@@ -1,7 +1,7 @@
 ﻿//using AutoMapper;
-//using TCRB.DAL.Model.Authentication;
+//using DAL.Model.Authentication;
 
-//namespace TCRB.WEB.MappingConfigurations
+//namespace WEB.MappingConfigurations
 //{
 //    public class MappingProfile : Profile
 //    {

@@ -1,14 +1,14 @@
-﻿using DAL.Entity;
+﻿using BLL;
+using DAL.Entity;
 using DAL.Model.Commons;
 using HELPER;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
 using System.Collections.Generic;
-using TCRB.BLL;
-using TCRB.WEB.Models.UserTest;
+using WEB.Models.UserTest;
 
-namespace TCRB.WEB.Controllers
+namespace WEB.Controllers
 {
     //[Authorize]
     public class UsertTestController : Controller

@@ -1,5 +1,5 @@
 ﻿@using System.Text.Json
-@model TCRB.WEB.Models.LoginViewModel
+@model WEB.Models.LoginViewModel
 @{ Layout = null; }
 
 <!DOCTYPE html>
@@ -104,10 +104,8 @@
 <script src="~/js/Login/login.min.js" asp-append-version="true"></script>
 <script>
     $(function () {
-        let isLoginA400 = @Html.Raw(JsonSerializer.Serialize(Model.IsAuthAs400));
-        let IsAuthenWin = @Html.Raw(JsonSerializer.Serialize(Model.IsAuthenWin));
         let authUrlUrl = '@Url.Action("Index")';
         let authAs400Url = '@Url.Action("AuthAs400")';
-        _login(isLoginA400, IsAuthenWin, authUrlUrl, authAs400Url);
+        _login(false, false, authUrlUrl, authAs400Url);
     });
 </script>

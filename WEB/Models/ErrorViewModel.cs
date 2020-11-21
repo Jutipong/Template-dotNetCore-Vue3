@@ -1,6 +1,6 @@
 using System;
 
-namespace TCRB.WEB.Models
+namespace WEB.Models
 {
     public class ErrorViewModel
     {
