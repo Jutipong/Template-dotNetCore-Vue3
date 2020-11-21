@@ -1,36 +1,15 @@
-//=================== Model ===================
-//const _inqueryModel = Vue.reactive({});
-//const _usertModel = Vue.reactive({});
-//const _inqueryModel = {
-//    PhoneNo: null,
-//    CitizenID_TaxID: null,
-//    StartDate: null,
-//    EndDate: null,
-//    ChannelCode: null,
-//    ProductTypeCode: null,
-//    ServiceTypeCode: null,
-//    Amount: null
-//};
-
-//const _detailModel = {
-//    ID: null,
-//    CreateDate: null,
-//    PhoneNo: null,
-//    CitizenIDTaxID: null,
-//    ProductTypeCode: null,
-//    ProductTypeName: null,
-//    ServiceTypeCode: null,
-//    ServiceTypeName: null,
-//    ChannelCode: null,
-//    ChannelName: null,
-//    PhoneSendOTP: null,
-//    ResultOfVerify: null,
-//    EndCallReasonCode: null,
-//    EndCallReasonName: null,
-//    CreateByCode: null,
-//    CreateByName: null,
-//    TotalRows: null,
-//    CitizenID_TaxID: null,
-//};
-
 //=================== Store ===================
+const store = Vue.reactive({});
+const inqueryModel = Vue.reactive({});
+const usertModel = Vue.reactive({});
+
+//================== Initial ==================
+const initialModel = (inquery, user) => {
+    Object.assign(inqueryModel, inquery)
+    Object.assign(usertModel, user)
+    Object.assign(store, user)
+}
+
+const getStore = () => {
+    return { inqueryModel, usertModel, store };
+}

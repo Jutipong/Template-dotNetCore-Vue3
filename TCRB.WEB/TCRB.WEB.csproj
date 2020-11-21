@@ -154,7 +154,6 @@
 	<ItemGroup>
 		<ProjectReference Include="..\TCRB.BLL\TCRB.BLL.csproj" />
 		<ProjectReference Include="..\TCRB.HELPER\TCRB.HELPER.csproj" />
-		<ProjectReference Include="..\TCRB.SERVICE\TCRB.SERVICE.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -173,6 +172,10 @@
 		<None Include="Views\_VueComponent\v-number.cshtml" />
 		<None Include="Views\_VueComponent\v-select2.cshtml" />
 		<None Include="Views\_VueComponent\v-table.cshtml" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Connected Services\" />
 	</ItemGroup>
 
 

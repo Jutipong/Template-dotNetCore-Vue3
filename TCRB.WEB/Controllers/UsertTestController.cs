@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
 using System.Collections.Generic;
@@ -12,15 +11,13 @@ using TCRB.WEB.Models.UserTest;
 
 namespace TCRB.WEB.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public class UsertTestController : Controller
     {
         private readonly UserTestDataService _userTestDataService;
-        private readonly UserLoginModel _userLogin;
-        public UsertTestController(UserTestDataService userTestDataService, UserLogin userLogin)
+        public UsertTestController(UserTestDataService userTestDataService)
         {
             _userTestDataService = userTestDataService;
-            _userLogin = userLogin.UserProfile();
         }
 
         public IActionResult Index()
@@ -48,14 +45,12 @@ namespace TCRB.WEB.Controllers
 
         public JsonResult Create(UserTest userTest)
         {
-            userTest.CreateBy = _userLogin.EmpCode;
             userTest.CreateDate = DateTime.Now;
             var result = _userTestDataService.Create(userTest);
             return Json(result);
         }
         public JsonResult Update(UserTest userTest)
         {
-            userTest.UpdateBy = _userLogin.EmpCode;
             userTest.UpdateDate = DateTime.Now;
             var result = _userTestDataService.Update(userTest);
             return Json(result);

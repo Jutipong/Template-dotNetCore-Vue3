@@ -59,9 +59,9 @@
     </div>
 
     @*Datatable*@
-    @*<v-table :setup="tableSetup" @@action="tableAction" v-model:table="dataTable">
+    <v-table :setup="tableSetup" @@action="tableAction" v-model:table="dataTable">
         <button type="button" class="btn btn-w-m btn-success btn-sm" data-toggle="modal" @@click="showModal()"><i class="fa fa-plus"></i> สร้าง</button>
-    </v-table>*@
+    </v-table>
 
     @*Modal Action*@
     @await Html.PartialAsync("~/Views/UsertTest/Components/_Modal.cshtml")
@@ -72,26 +72,19 @@
         template: '#app-component',
         setup() {
             const { ref, reactive, onMounted, computed } = Vue;
-
             const titleModal = computed(() => (UserTest.ID == _Enum.GuidEmpty) ? 'สร้าง' : 'แก้ไข');
             const Inquiry = reactive({});
             const UserTest = reactive({});
-            //dataTable
             const dataTable = ref(null);
 
             onMounted(() => {
-                $('#modalAction').on('hidden.bs.modal', () => _.assign(UserTest, _usertModel));
-                _.assign(UserTest, _usertModel);
+                $('#modalAction').on('hidden.bs.modal', () => _.assign(UserTest, usertModel));
             });
 
-            function InitialDatas() {
-                _.assign(Inquiry, _inqueryModel);
-            };
-            function onInquiry() {
-                console.log('Inquiry');
-                //dataTable.value.fnDraw();
-            }
-            function tableAction({ action, data }) {
+            const showModal = () => $('#modalAction').modal('show');
+            const InitialDatas = () => Object.assign(Inquiry, inqueryModel);
+            const onInquiry = () => dataTable.value.fnDraw();
+            const tableAction = ({ action, data }) => {
                 switch (action) {
                     case _Enum.Action.VIEW.Text:
                         _.assign(UserTest, data);
@@ -102,13 +95,12 @@
                         break;
                 }
             }
-            function onSave() {
-                @*_alertConfirm(_Config.Confirm.Blue, "fa fa-save", "บันทึกข้อมูล", `ยืนยันบันทึกข้อมูล ใช่หรือไม่?`, "ใช่", "ไม่", function (res) {
+            const onSave = () => {
+                _alertConfirm(_Config.Confirm.Blue, "fa fa-save", "บันทึกข้อมูล", `ยืนยันบันทึกข้อมูล ใช่หรือไม่?`, "ใช่", "ไม่", function (res) {
                     if (res) {
                         let url = UserTest.ID === _Enum.GuidEmpty ? '@Url.Action("Create")' : '@Url.Action("Update")';
                         _ajax(url, UserTest, true, function (res) {
                             if (res.Success) {
-                                _.assign(UserTest, _usertModel);
                                 _toastrSuccess(_Enum.Message.SaveSuccess);
                                 onInquiry();
                                 $('#modalAction').modal('hide');
@@ -117,9 +109,9 @@
                             }
                         });
                     }
-                });*@
+                });
             }
-            function onDelete(obj) {
+            const onDelete = (obj) => {
                 _alertConfirm(_Config.Confirm.Red, "fa fa-trash", "ลบข้อมูล", `คุณต้องการลบ ใช่หรือไม่?`, "ใช่", "ไม่", function (res) {
                     if (res) {
                         _ajax('@Url.Action("Delete")', obj, true, function (res) {
@@ -133,11 +125,6 @@
                     }
                 });
             }
-            function showModal() {
-                $('#modalAction').modal('show');
-            }
-
-            InitialDatas();
 
             return {
                 Inquiry,
@@ -149,7 +136,8 @@
                 titleModal,
                 onInquiry,
                 onSave,
-                ..._datatableSetup('@Url.Action("InquiryMasterDatatable")')
+                ..._datatableSetup('@Url.Action("InquiryMasterDatatable")'),
+                ...getStore()
             };
         }
     });

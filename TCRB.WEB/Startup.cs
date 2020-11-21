@@ -14,10 +14,8 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using TCRB.BLL;
-using TCRB.DAL;
 using TCRB.DAL.DataWrapper;
 using TCRB.DAL.Model.Appsetting;
-using TCRB.SERVICE;
 using TCRB.WEB.Helpers;
 using TCRB.WEB.ModelBinder;
 
@@ -45,32 +43,9 @@ namespace TCRB.WEB
             });
 
             services.Configure<AppsittingModel>(_configuration.GetSection("AppSettings"));
-            services.AddDbContext<TCRBDBContext>();
-            services.AddDbContext<UserManagementDBContext>();
-            services.AddScoped<UserLogin>();
-            services.AddScoped<MenuPermission>();
-            services.AddScoped<Authentication>();
             services.AddHttpContextAccessor();
 
             #region Data Service
-            //services.AddScoped<MsMessageDataService>();
-            //services.AddScoped<ConfigWrongAnswerDataService>();
-            //services.AddScoped<ConfigOTPDataService>();
-            //services.AddScoped<MsEndCallReasonDataService>();
-            //services.AddScoped<MsVerificationReasonDataService>();
-            //services.AddScoped<MsVerifyTypeDataService>();
-            //services.AddScoped<MsChannelDataService>();
-            //services.AddScoped<MsLevelDataService>();
-            //services.AddScoped<MsCustomerTypeDataService>();
-            //services.AddScoped<MsTopicTypeDataService>();
-            //services.AddScoped<MsServiceTypeDataService>();
-            //services.AddScoped<MsProductTypeDataService>();
-            //services.AddScoped<MsQuestionDataService>();
-            //services.AddScoped<VerifyCustomerDataService>();
-            //services.AddScoped<InquiryCustomerDataService>();
-            //services.AddScoped<ReportDataService>();
-            services.AddScoped<SmsWebService>();
-            services.AddScoped<UserManagementDataService>();
             services.AddScoped<UserTestDataService>();
             services.AddScoped<IDataAccessWrapper, DataAccessWrapper>();
             #endregion
@@ -82,27 +57,17 @@ namespace TCRB.WEB
                 options.SupportedUICultures = new List<CultureInfo> {
                     new CultureInfo("th-TH"),
                     new CultureInfo("en-GB"),
-                    //new CultureInfo("en-US"),
-                    //new CultureInfo("en-AU")
                 };
                 options.SupportedCultures = new List<CultureInfo> {
                     new CultureInfo("th-TH"),
                     new CultureInfo("en-GB"),
-                    //new CultureInfo("en-US"),
-                    //new CultureInfo("en-AU")
                 };
             });
+
             services.AddAutoMapper(typeof(Startup));
             services.AddControllersWithViews();
-            services.AddControllers().AddJsonOptions(options =>
-            {
-                options.JsonSerializerOptions.PropertyNamingPolicy = null;
-                //options.JsonSerializerOptions.Converters.Add(new CustomJsonConverterDateTime());
-            });
-            services.AddMvc(options =>
-            {
-                options.ModelBinderProviders.Insert(0, new ModelBinderProvider(_loggerFactory));
-            });
+            services.AddControllers().AddJsonOptions(options => options.JsonSerializerOptions.PropertyNamingPolicy = null);
+            services.AddMvc(options => options.ModelBinderProviders.Insert(0, new ModelBinderProvider(_loggerFactory)));
             services.AddScoped<CustomCookieAuthenticationEvents>();
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(options =>
             {
@@ -148,12 +113,7 @@ namespace TCRB.WEB
             app.UseRouting();
             app.UseAuthorization();
             System.Web.HttpContext.Configure(app.ApplicationServices.GetRequiredService<IHttpContextAccessor>());
-
-            app.UseEndpoints(endpoints =>
-            {
-                //endpoints.MapControllerRoute(name: "default", pattern: "{controller=Login}/{action=Index}/{id?}");
-                endpoints.MapControllerRoute(name: "default", pattern: "{controller=Login}/{action=Index}");
-            });
+            app.UseEndpoints(endpoints => endpoints.MapControllerRoute(name: "default", pattern: "{controller=Login}/{action=Index}"));
         }
     }
 }

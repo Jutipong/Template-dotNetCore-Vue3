@@ -55,8 +55,8 @@
             <div class="col-md-6">
                 <div class="ibox-content">
                     <div class="text-center pb-2">
-                        <img alt="image" class="TCRBank_Logo rounded mt-4" src="~/images/tcrb-logo.png">
-                        <h2 class="title font-bold text-center mt-5"> <span> Call Verification System </span></h2>
+                        <img alt="image" class="TCRBank_Logo rounded mt-4">
+                        <h2 class="title font-bold text-center mt-5"> <span> Demo System </span></h2>
                     </div>
                     <form class="mt-4" role="form" action="javascript:;" id="form-login" method="post">
                         <div class="form-group">
@@ -90,55 +90,6 @@
             </div>
         </div>
     </div>
-
-
-    @*Modal Login AS400*@
-    <div class="modal inmodal fade animated fadeInDown" id="modalAction" role="dialog" aria-hidden="true" data-backdrop="static">
-        <div class="modal-dialog modal-60">
-            <div class="modal-content">
-                <form class="form-horizontal" action="javascript:;" id="form-login-as400" method="post">
-                    <div class="modal-header">
-                        <h4 class="modal-title">Authentication: AS400</h4>
-                    </div>
-                    <div class="modal-body">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <div class="input-group">
-                                        <input type="text" tabindex="3" name="UserName" class="form-control username" placeholder="Username" autocomplete="off" value="@Model.UserNameAs400">
-                                        <span class="input-group-addon">
-                                            <i class="fa fa-user"></i>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <div class="input-group">
-                                        <input type="password" tabindex="4" name="Password" class="form-control password" placeholder="Password" autocomplete="off" value="@Model.PasswordAs400">
-                                        <span class="input-group-addon">
-                                            <i class="fa fa-lock"></i>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-12 text-center">
-                                <span style="color:red; font-size:16px;" id="msg"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="submit" id="btnLogin-as400" class="btn btn-w-m btn-primary">LOGIN <i class="fa fa-sign-in"></i></button>
-                        @if (!Model.IsAuthenWin)
-                        {
-                            <button type="button" class="btn btn-w-m btn-white" data-dismiss="modal"> <i class="fa fa-times"></i> CANCEL</button>
-                        }
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-
 </body>
 
 </html>
