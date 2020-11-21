@@ -1,6 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using HELPER;
+using Microsoft.AspNetCore.Http;
 using System.Collections.Generic;
-using TCRB.HELPER;
 
 namespace TCRB.DAL.Model.Commons
 {

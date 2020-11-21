@@ -1,9 +1,9 @@
-﻿using System;
+﻿using HELPER;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using TCRB.DAL.Model.Authentication;
 using TCRB.DAL.Model.MenuPermission;
-using TCRB.HELPER.Enum;
 using MenuModel = TCRB.DAL.Model.MenuPermission.MenuModel;
 using PermissionModel = TCRB.DAL.Model.MenuPermission.PermissionModel;
 

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
 
-namespace TCRB.HELPER.Enum
+namespace HELPER
 {
     public enum EnumQuestionAnswer
     {

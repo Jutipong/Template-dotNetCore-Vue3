@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace TCRB.HELPER
+namespace HELPER
 {
     public enum EnumLog
     {

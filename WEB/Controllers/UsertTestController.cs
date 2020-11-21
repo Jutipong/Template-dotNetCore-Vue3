@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using HELPER;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
 using System.Collections.Generic;
@@ -6,7 +7,6 @@ using TCRB.BLL;
 using TCRB.DAL.Entity;
 using TCRB.DAL.Model.Authentication;
 using TCRB.DAL.Model.Commons;
-using TCRB.HELPER;
 using TCRB.WEB.Models.UserTest;
 
 namespace TCRB.WEB.Controllers

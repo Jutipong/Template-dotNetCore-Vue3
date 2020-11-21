@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace TCRB.HELPER.Enum
+namespace HELPER
 {
     public enum EnumMaster
     {
