@@ -1,0 +1,62 @@
+[
+  {
+    "outputFileName": "wwwroot/js/script.min.js",
+    "inputFiles": [
+      "wwwroot/js/script.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/animate.min.css",
+    "inputFiles": [
+      "wwwroot/css/animate.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/lib/custom/custome.min.js",
+    "inputFiles": [
+      "wwwroot/lib/custom/custome.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/_VueComponents/v-datepicker.min.js",
+    "inputFiles": [
+      "wwwroot/js/_VueComponents/v-datepicker.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/_VueComponents/v-number.min.js",
+    "inputFiles": [
+      "wwwroot/js/_VueComponents/v-number.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/_VueComponents/v-select2.min.js",
+    "inputFiles": [
+      "wwwroot/js/_VueComponents/v-select2.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/_VueComponents/v-teble.min.js",
+    "inputFiles": [
+      "wwwroot/js/_VueComponents/v-teble.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/Login/login.min.js",
+    "inputFiles": [
+      "wwwroot/js/Login/login.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/UserTest/datatable-setup.min.js",
+    "inputFiles": [
+      "wwwroot/js/UserTest/datatable-setup.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/UserTest/store.min.js",
+    "inputFiles": [
+      "wwwroot/js/UserTest/store.js"
+    ]
+  }
+]

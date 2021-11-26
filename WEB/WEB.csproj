@@ -1,0 +1,179 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<PropertyGroup>
+		<TargetFramework>netcoreapp3.1</TargetFramework>
+		<StartupObject></StartupObject>
+		<UserSecretsId>bb356502-2416-4cec-ad7a-014df7032508</UserSecretsId>
+		<ApplicationIcon>favicon.ico</ApplicationIcon>
+		<EnableNETAnalyzers>false</EnableNETAnalyzers>
+		<EnforceCodeStyleInBuild>false</EnforceCodeStyleInBuild>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Compile Remove="Models\Customer\**" />
+		<Compile Remove="Utility\**" />
+		<Compile Remove="Views\ConfigOTP\**" />
+		<Compile Remove="Views\Configuration\**" />
+		<Compile Remove="Views\ConfigWrongAnswer\**" />
+		<Compile Remove="Views\Dashboard\**" />
+		<Compile Remove="Views\Home\**" />
+		<Compile Remove="Views\InquiryCustomer\**" />
+		<Compile Remove="Views\MsCustomerType\**" />
+		<Compile Remove="Views\MsEndCallReason\**" />
+		<Compile Remove="Views\MsLevel\**" />
+		<Compile Remove="Views\MsMessage\**" />
+		<Compile Remove="Views\MsProductType\**" />
+		<Compile Remove="Views\MsQuestion\**" />
+		<Compile Remove="Views\MsServiceType\**" />
+		<Compile Remove="Views\MsTopicType\**" />
+		<Compile Remove="Views\MsVerificationReason\**" />
+		<Compile Remove="Views\MsVerifyType\**" />
+		<Compile Remove="Views\Report\**" />
+		<Compile Remove="Views\VerifyCustomer\**" />
+		<Content Remove="Models\Customer\**" />
+		<Content Remove="Utility\**" />
+		<Content Remove="Views\ConfigOTP\**" />
+		<Content Remove="Views\Configuration\**" />
+		<Content Remove="Views\ConfigWrongAnswer\**" />
+		<Content Remove="Views\Dashboard\**" />
+		<Content Remove="Views\Home\**" />
+		<Content Remove="Views\InquiryCustomer\**" />
+		<Content Remove="Views\MsCustomerType\**" />
+		<Content Remove="Views\MsEndCallReason\**" />
+		<Content Remove="Views\MsLevel\**" />
+		<Content Remove="Views\MsMessage\**" />
+		<Content Remove="Views\MsProductType\**" />
+		<Content Remove="Views\MsQuestion\**" />
+		<Content Remove="Views\MsServiceType\**" />
+		<Content Remove="Views\MsTopicType\**" />
+		<Content Remove="Views\MsVerificationReason\**" />
+		<Content Remove="Views\MsVerifyType\**" />
+		<Content Remove="Views\Report\**" />
+		<Content Remove="Views\VerifyCustomer\**" />
+		<EmbeddedResource Remove="Models\Customer\**" />
+		<EmbeddedResource Remove="Utility\**" />
+		<EmbeddedResource Remove="Views\ConfigOTP\**" />
+		<EmbeddedResource Remove="Views\Configuration\**" />
+		<EmbeddedResource Remove="Views\ConfigWrongAnswer\**" />
+		<EmbeddedResource Remove="Views\Dashboard\**" />
+		<EmbeddedResource Remove="Views\Home\**" />
+		<EmbeddedResource Remove="Views\InquiryCustomer\**" />
+		<EmbeddedResource Remove="Views\MsCustomerType\**" />
+		<EmbeddedResource Remove="Views\MsEndCallReason\**" />
+		<EmbeddedResource Remove="Views\MsLevel\**" />
+		<EmbeddedResource Remove="Views\MsMessage\**" />
+		<EmbeddedResource Remove="Views\MsProductType\**" />
+		<EmbeddedResource Remove="Views\MsQuestion\**" />
+		<EmbeddedResource Remove="Views\MsServiceType\**" />
+		<EmbeddedResource Remove="Views\MsTopicType\**" />
+		<EmbeddedResource Remove="Views\MsVerificationReason\**" />
+		<EmbeddedResource Remove="Views\MsVerifyType\**" />
+		<EmbeddedResource Remove="Views\Report\**" />
+		<EmbeddedResource Remove="Views\VerifyCustomer\**" />
+		<None Remove="Models\Customer\**" />
+		<None Remove="Utility\**" />
+		<None Remove="Views\ConfigOTP\**" />
+		<None Remove="Views\Configuration\**" />
+		<None Remove="Views\ConfigWrongAnswer\**" />
+		<None Remove="Views\Dashboard\**" />
+		<None Remove="Views\Home\**" />
+		<None Remove="Views\InquiryCustomer\**" />
+		<None Remove="Views\MsCustomerType\**" />
+		<None Remove="Views\MsEndCallReason\**" />
+		<None Remove="Views\MsLevel\**" />
+		<None Remove="Views\MsMessage\**" />
+		<None Remove="Views\MsProductType\**" />
+		<None Remove="Views\MsQuestion\**" />
+		<None Remove="Views\MsServiceType\**" />
+		<None Remove="Views\MsTopicType\**" />
+		<None Remove="Views\MsVerificationReason\**" />
+		<None Remove="Views\MsVerifyType\**" />
+		<None Remove="Views\Report\**" />
+		<None Remove="Views\VerifyCustomer\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Remove="Controllers\ConfigOTPController.cs" />
+		<Compile Remove="Controllers\ConfigurationController.cs" />
+		<Compile Remove="Controllers\ConfigWrongAnswerController.cs" />
+		<Compile Remove="Controllers\HomeController.cs" />
+		<Compile Remove="Controllers\MsChannelController.cs" />
+		<Compile Remove="Controllers\MsCustomerTypeController.cs" />
+		<Compile Remove="Controllers\MsEndCallReasonController.cs" />
+		<Compile Remove="Controllers\MsLevelController.cs" />
+		<Compile Remove="Controllers\MsMessageController.cs" />
+		<Compile Remove="Controllers\MsProductTypeController.cs" />
+		<Compile Remove="Controllers\MsQuestionController.cs" />
+		<Compile Remove="Controllers\MsServiceTypeController.cs" />
+		<Compile Remove="Controllers\MsTopicTypeController.cs" />
+		<Compile Remove="Controllers\MsVerificationReasonController.cs" />
+		<Compile Remove="Controllers\MsVerifyTypeController.cs" />
+		<Compile Remove="Controllers\ReportController.cs" />
+		<Compile Remove="Controllers\VerifyCustomerController.cs" />
+		<Compile Remove="Models\ConfigOTPViewModel.cs" />
+		<Compile Remove="Models\ConfigurationViewModelxx.cs" />
+		<Compile Remove="Models\ConfigWrongAnswerViewModel.cs" />
+		<Compile Remove="Models\MsChannelViewModel.cs" />
+		<Compile Remove="Models\MsCustomerTypeViewModel.cs" />
+		<Compile Remove="Models\MsEndCallReasonViewModel.cs" />
+		<Compile Remove="Models\MsLeveViewModel.cs" />
+		<Compile Remove="Models\MsMessageViewModel.cs" />
+		<Compile Remove="Models\MsProductTypeViewModel.cs" />
+		<Compile Remove="Models\MsQuestionViewModel.cs" />
+		<Compile Remove="Models\MsServiceTypeViewModel.cs" />
+		<Compile Remove="Models\MsTopicTypeViewModel.cs" />
+		<Compile Remove="Models\MsVerificationReasonViewModel.cs" />
+		<Compile Remove="Models\MsVerifyTypeViewModel.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Content Remove="bundleconfig.json" />
+		<Content Remove="Views\_VueComponent\_DatepickerComponent.cshtml" />
+		<Content Remove="Views\_VueComponent\_NumberComponent.cshtml" />
+		<Content Remove="Views\_VueComponent\_NumberWithCommaComponent.cshtml" />
+		<Content Remove="Views\_VueComponent\_Select2MultipleComponent.cshtml" />
+		<Content Remove="Views\_VueComponent\_Select2SingleAjaxComponent.cshtml" />
+		<Content Remove="Views\_VueComponent\_Select2SingleComponent.cshtml" />
+		<Content Remove="wwwroot\js\stateuser.js" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.0" />
+		<PackageReference Include="BuildBundlerMinifier" Version="3.2.449" />
+		<PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.7" />
+		<PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="3.1.9" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="3.1.9" />
+		<PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.4" />
+		<PackageReference Include="NLog.Web.AspNetCore" Version="4.9.3" />
+		<PackageReference Include="System.Data.OleDb" Version="4.7.1" />
+		<PackageReference Include="System.ServiceModel.Duplex" Version="4.7.0" />
+		<PackageReference Include="System.ServiceModel.Http" Version="4.7.0" />
+		<PackageReference Include="System.ServiceModel.NetTcp" Version="4.7.0" />
+		<PackageReference Include="System.ServiceModel.Primitives" Version="4.7.0" />
+		<PackageReference Include="System.ServiceModel.Security" Version="4.7.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\BLL\BLL.csproj" />
+		<ProjectReference Include="..\HELPER\HELPER.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<WCFMetadata Include="Connected Services" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="bundleconfig.json" />
+		<None Include="Views\_VueComponent\v-datepicker.cshtml" />
+		<None Include="Views\_VueComponent\v-number.cshtml" />
+		<None Include="Views\_VueComponent\v-select2.cshtml" />
+		<None Include="Views\_VueComponent\v-table.cshtml" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Connected Services\" />
+	</ItemGroup>
+
+
+
+</Project>
