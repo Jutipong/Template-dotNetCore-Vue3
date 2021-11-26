@@ -5,6 +5,10 @@
     <div class="modal-dialog modal-50">
         <div class="modal-content">
             <form id="" class="form-horizontal" v-on:submit.prevent="onSave()">
+
+                @*hiden value*@
+                <input type="hidden" name="ID" />
+
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
                     <h4 class="modal-title">{{ titleModal }}</h4>
@@ -15,8 +19,7 @@
                             <div :class="{'form-group': true, 'row': true}">
                                 <label class="col-md-3 col-form-label"><span class="text-danger">*</span>Code</label>
                                 <div class="col-md-9">
-                                    <input type="text" name="Name" class="form-control" placeholder="" autocomplete="off"
-                                           v-model="UserTest.Name">
+                                    <input type="text" name="Name" class="form-control" placeholder="" autocomplete="off" />
                                 </div>
                             </div>
                         </div>
@@ -24,8 +27,7 @@
                             <div :class="{'form-group': true, 'row': true}">
                                 <label class="col-md-3 col-form-label"><span class="text-danger">*</span>Description</label>
                                 <div class="col-md-9">
-                                    <input type="text" name="Last" class="form-control" placeholder="" autocomplete="off"
-                                           v-model="UserTest.Last">
+                                    <input type="text" name="Last" class="form-control" placeholder="" autocomplete="off" />
                                 </div>
                             </div>
                         </div>
@@ -33,18 +35,16 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group row">
-
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group row">
                                 <label class="col-md-3 col-form-label">Active</label>
                                 <div class="col-md-9">
-                                    <v-select2 name="ProductTypeCode"
+                                    <v-select2 name="IsActive"
                                                :placeholder="''"
                                                :allowclear=false
-                                               :options="@JsonSerializer.Serialize(Model.IsActiveMaster)"
-                                               v-model:value="UserTest.IsActive">
+                                               :options="@JsonSerializer.Serialize(Model.IsActiveMaster)" >
                                     </v-select2>
                                 </div>
                             </div>

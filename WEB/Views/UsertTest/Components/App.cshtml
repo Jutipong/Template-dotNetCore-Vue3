@@ -67,6 +67,27 @@
     @await Html.PartialAsync("~/Views/UsertTest/Components/_Modal.cshtml")
 </template>
 
+
+@*(ノ｀Д´)ノ彡┻━┻
+-----------------------------------------------------------------------------------------------------
+-------------------------------------------- Read me. -----------------------------------------------
+-----------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------
+
+##1 คือตัวอย่งการดึง value จาก input มาปั้นเป็น obj และส่ง obj นั้งไปที่ controller
+##2 ตัวอย่างการ ได้ค่าไม่ว่าจะเป็นค่าที่ได้จาก หลังบ้าน (controller) หรือค่าที่ได้จาก lib ต่างๆ แล้วเราต้องการ Bind ค่านั้นใส่ input 
+
+## * ถ้าพวก input, select พยายามอย่าผูดด้วย (#) => id , id ใช้สำหรับจับ Scope ใหญ่ๆ เช่น form เป็นต้น
+## สิ่งที่ควรทำคือ ให้ใช้ name หรือ class จะได้ทำการ จับค่าได้ง่าย และทำ Dynamic ได้ง่าย
+
+-----------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------*@
+@*Ps. เป็นไปได้ เลิกใช้เถอะ jQuery ฮ่าาาาาาาาา*@
+
+
+
 <script type="text/javascript">
     app.component('app-component', {
         template: '#app-component',
@@ -84,32 +105,65 @@
             const showModal = () => $('#modalAction').modal('show');
             const InitialDatas = () => Object.assign(Inquiry, inqueryModel);
             const onInquiry = () => dataTable.value.fnDraw();
+
+             //##2 => เพิ่มตัวอย่างการใช้งาน jqury แทนการใช้ Vue   55555555+
             const tableAction = ({ action, data }) => {
                 switch (action) {
                     case _Enum.Action.VIEW.Text:
-                        Object.assign(UserTest, data);
-                        $('#modalAction').modal('show');
+                    //ตัวอย่างการใช้งาน jQuery
+                    let $scope = '#modalAction'
+                    _initData($scope,data)
+                        $($scope).modal('show');
+
+                    //ตัวอย่างการใช้งาน Vue
+                        //Object.assign(UserTest, data);
+                        //$('#modalAction').modal('show');
                         break;
                     case _Enum.Action.Delete.Text:
                         onDelete(data);
                         break;
                 }
             }
+
+            // ##1 => เพิ่มตัวอย่างการใช้งาน jqury แทนการใช้ Vue   55555555+
             const onSave = () => {
+                //ตัวอย่างของการใช้ Jquery
+                let $scope = '#modalAction'
+                var obj = _getData($scope)
+                console.log(obj)
                 _alertConfirm(_Config.Confirm.Blue, "fa fa-save", "บันทึกข้อมูล", `ยืนยันบันทึกข้อมูล ใช่หรือไม่?`, "ใช่", "ไม่", function (res) {
                     if (res) {
-                        let url = UserTest.ID === _Enum.GuidEmpty ? '@Url.Action("Create")' : '@Url.Action("Update")';
-                        _ajax(url, UserTest, true, function (res) {
+                        const _id = $($scope).find('[name="ID"]').val();
+                        console.log(_id)
+                        let url = (_id === '' || _id === _Enum.GuidEmpty )  ? '@Url.Action("Create")' : '@Url.Action("Update")';
+                        _ajax(url, obj, true, function (res) {
                             if (res.Success) {
                                 _toastrSuccess(_Enum.Message.SaveSuccess);
-                                onInquiry();
-                                $('#modalAction').modal('hide');
+                                //onInquiry();
+                                $($scope).modal('hide');
+                                _resetSelector($scope);
                             } else {
                                 _toastrError(res.Message);
                             }
                         });
                     }
                 });
+
+                //ตัวอย่างของการใช้ Vue
+                //_alertConfirm(_Config.Confirm.Blue, "fa fa-save", "บันทึกข้อมูล", `ยืนยันบันทึกข้อมูล ใช่หรือไม่?`, "ใช่", "ไม่", function (res) {
+                //    if (res) {
+                //        let url = UserTest.ID === _Enum.GuidEmpty ? '@Url.Action("Create")' : '@Url.Action("Update")';
+                //        _ajax(url, UserTest, true, function (res) {
+                //            if (res.Success) {
+                //                _toastrSuccess(_Enum.Message.SaveSuccess);
+                //                onInquiry();
+                //                $('#modalAction').modal('hide');
+                //            } else {
+                //                _toastrError(res.Message);
+                //            }
+                //        });
+                //    }
+                //});
             }
             const onDelete = (obj) => {
                 _alertConfirm(_Config.Confirm.Red, "fa fa-trash", "ลบข้อมูล", `คุณต้องการลบ ใช่หรือไม่?`, "ใช่", "ไม่", function (res) {

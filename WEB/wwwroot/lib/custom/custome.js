@@ -279,11 +279,17 @@ const SessionExpired = (xhr) => {
 //}
 
 const _resetForm = ($scope) => {
+    $scope = $($scope)
     $scope[0].reset();
 
     let readonly = $scope.find('input[type=text][readonly]')
     $.each(readonly, function (i, val) {
         $(this).prop('readonly', false);
+    });
+
+    let input = $scope.find('input[type=text]')
+    $.each(input, function (i, val) {
+        $(this).val(null)
     });
 
     let select2 = $scope.find('select');
@@ -299,13 +305,6 @@ const _resetForm = ($scope) => {
         $(this).datepicker('setEndDate', false);
     });
 
-    $.each($scope.find('.text-red'), function (i, e) {
-        let _id = $(this).attr('id');
-        if (_id != undefined) {
-            $(this).removeClass('text-red');
-        }
-    });
-
     $.each($('.has-error'), function (i, e) {
         $(e).removeClass('has-error');
     });
@@ -316,9 +315,12 @@ const _resetForm = ($scope) => {
 
 const _resetSelector = ($scope) => {
 
+    $scope = $($scope)
+
     let input = $scope.find('input');
     $.each(input, function (i, val) {
-        $(this).val(null);
+        debugger
+        $(this).val('');
     });
 
     let textarea = $scope.find('textarea');
@@ -355,6 +357,7 @@ const _submitForm = ($scope, callback) => {
 }
 
 const _initData = ($scope, $obj) => {
+    $scope = $($scope)
     if (_isNull($obj)) return;
 
     let $input = $scope.find('input[type=hidden], input[type=text], textarea, select,input[type=number], input[type=checkbox]');
@@ -520,6 +523,14 @@ const _handleEventValidate = ($scope) => {
     return flagStatus;
 }
 
+const _getData = ($form) => {
+    let objs = new Object();
+    $.each($($form).find('input, select'), function (e, x) {
+        objs[x['name']] = x['value'];
+    });
+    return objs;
+}
+
 const _getData_in_Div = ($form) => {
     let objs = new Object();
     $.each($($form).find('input'), function (e, x) {
@@ -658,4 +669,4 @@ const _dataTable = ($scope, $tableID, $form_searchID, $option, callback) => {
         },
 
     });
-} 
+}

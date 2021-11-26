@@ -10,6 +10,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+		<Compile Remove="Connected Services\**" />
 		<Compile Remove="Models\Customer\**" />
 		<Compile Remove="Utility\**" />
 		<Compile Remove="Views\ConfigOTP\**" />
@@ -30,6 +31,7 @@
 		<Compile Remove="Views\MsVerifyType\**" />
 		<Compile Remove="Views\Report\**" />
 		<Compile Remove="Views\VerifyCustomer\**" />
+		<Content Remove="Connected Services\**" />
 		<Content Remove="Models\Customer\**" />
 		<Content Remove="Utility\**" />
 		<Content Remove="Views\ConfigOTP\**" />
@@ -50,6 +52,7 @@
 		<Content Remove="Views\MsVerifyType\**" />
 		<Content Remove="Views\Report\**" />
 		<Content Remove="Views\VerifyCustomer\**" />
+		<EmbeddedResource Remove="Connected Services\**" />
 		<EmbeddedResource Remove="Models\Customer\**" />
 		<EmbeddedResource Remove="Utility\**" />
 		<EmbeddedResource Remove="Views\ConfigOTP\**" />
@@ -70,6 +73,7 @@
 		<EmbeddedResource Remove="Views\MsVerifyType\**" />
 		<EmbeddedResource Remove="Views\Report\**" />
 		<EmbeddedResource Remove="Views\VerifyCustomer\**" />
+		<None Remove="Connected Services\**" />
 		<None Remove="Models\Customer\**" />
 		<None Remove="Utility\**" />
 		<None Remove="Views\ConfigOTP\**" />
@@ -143,7 +147,7 @@
 		<PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.7" />
 		<PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="3.1.9" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="3.1.9" />
-		<PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.4" />
+		<PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
 		<PackageReference Include="NLog.Web.AspNetCore" Version="4.9.3" />
 		<PackageReference Include="System.Data.OleDb" Version="4.7.1" />
 		<PackageReference Include="System.ServiceModel.Duplex" Version="4.7.0" />
@@ -168,10 +172,6 @@
 		<None Include="Views\_VueComponent\v-number.cshtml" />
 		<None Include="Views\_VueComponent\v-select2.cshtml" />
 		<None Include="Views\_VueComponent\v-table.cshtml" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Folder Include="Connected Services\" />
 	</ItemGroup>
 
 
